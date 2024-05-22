@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Encuesta de Trabajo</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+    }
+    .container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+    }
+    label {
+        display: block;
+        margin-bottom: 10px;
+        color: #666;
+    }
+    input[type="text"], input[type="email"], textarea, select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type="submit"], input[type="reset"] {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    input[type="submit"]:hover, input[type="reset"]:hover {
+        background-color: #45a049;
+    }
+    .message {
+        text-align: center;
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #dff0d8;
+        border: 1px solid #c3e6cb;
+        border-radius: 4px;
+        color: #155724;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Encuesta de Trabajo Tecnológica</h1>
+    <form id="encuestaForm" action="#" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="puesto">Puesto deseado:</label>
+        <select id="puesto" name="puesto" required>
+            <option value="">Selecciona una opción</option>
+            <option value="Desarrollador de software">Desarrollador de software</option>
+            <option value="Diseñador gráfico">Diseñador gráfico</option>
+            <option value="Analista de datos">Analista de datos</option>
+            <option value="Gerente de ventas">Gerente de ventas</option>
+            <!-- Agrega más opciones según sea necesario -->
+        </select>
+
+        <label for="motivacion">Motivación para aplicar:</label>
+        <textarea id="motivacion" name="motivacion" rows="4" required></textarea>
+
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpiar">
+    </form>
+
+    <div id="mensajeAprobacion" class="message" style="display: none;">
+        ¡La encuesta ha sido aprobada por la empresa!
+    </div>
+</div>
+
+<script>
+    document.getElementById('encuestaForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // Aquí podrías enviar los datos del formulario a través de AJAX si necesitas procesarlos en el servidor
+
+        // Muestra el mensaje de aprobación
+        document.getElementById('mensajeAprobacion').style.display = 'block';
+    });
+</script>
+
+</body>
+</html>
